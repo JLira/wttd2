@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.core import mail
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
@@ -18,10 +19,12 @@ def subscribe(request):
                             'contato@eventex.com.br',
                             ['contato@eventex.com.br', form.cleaned_data['email']])
             
+            messages.success(request, 'Inscrição realizada com sucesso!')
+            
             return HttpResponseRedirect('/inscricao/')
         else:
             return render(request, 'subscriptions/subscription_form.html',
-                          {'form': SubscriptionForm()})
+                          {'form': form})
 
 
     else:
