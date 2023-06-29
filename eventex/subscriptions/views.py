@@ -17,8 +17,8 @@ def subscribe(request):
 
             mail.send_mail('Confirmação de inscrição', 
                             body,
-                            'jobson.lira@gmail.com',
-                            ['jobson.lira@gmail.com', form.cleaned_data['email']])
+                            'contato@dianasimoes.com.br',
+                            ['contato@dianasimoes.com.br', form.cleaned_data['email']])
             
             messages.success(request, 'Inscrição realizada com sucesso!')
             

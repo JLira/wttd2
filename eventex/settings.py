@@ -123,9 +123,23 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIR = [os.path.join(BASE_DIR, 'static'),]
 
 # email configuration
-EMAIL_BACKEND = config('EMAIL_BACKEND')
-EMAIL_HOST = config('EMAIL_HOST')
-EMAIL_PORT = config('EMAIL_PORT')
-EMAIL_USE_TLS = config('EMAIL_USE_TLS')
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_BACKEND=config('EMAIL_BACKEND')
+EMAIL_HOST=config('EMAIL_HOST')
+EMAIL_PORT=config('EMAIL_PORT')
+EMAIL_HOST_USER=config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD=config('EMAIL_HOST_PASSWORD')
+
+email_use_tls = config('EMAIL_USE_TLS', default=False, cast=bool)
+
+if email_use_tls:
+    EMAIL_USE_TLS = True
+else:
+    EMAIL_USE_TLS = False
+
+email_use_ssl = config('EMAIL_USE_SSL', default=False, cast=bool)
+
+if email_use_ssl:
+    EMAIL_USE_SSL = True
+else:
+    EMAIL_USE_SSL = False    
+ 
