@@ -28,6 +28,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='', cast=Csv())
 ALLOWED_HOSTS = ['*']
+DEFAULT_FROM_EMAIL = 'contato@dianasimoes.com.br'
 
 # Application definition
 
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'test_without_migrations',
     'eventex.core',
     'eventex.subscriptions',
 ]
