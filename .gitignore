@@ -2,6 +2,7 @@
 .env
 .wttd2
 *.sqlite3
+db_sqlite3
 *pyc
 __pycache__
 staticfiles
